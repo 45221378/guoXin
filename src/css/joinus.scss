@@ -1,0 +1,102 @@
+.joinus-main{
+  width: 869px;
+  margin: 79px auto 0;
+  .jionus-form{
+    margin: 78px 0 0 0;
+    .form-title{
+      float: left;
+      width: 370px;
+      h5{
+        font-size: 19px;
+        color: #313131;
+        margin-bottom: 36px;
+        font-weight: normal;
+      }
+      .joinus-ul{
+        li{
+          margin-bottom: 34px;
+          img{
+            width: 20px;
+            height: 20px;
+            margin-right: 24px;
+            float: left;
+          }
+          .mgt10{
+            margin-top: 10px;
+          }
+          p{
+            font-size: 16px;
+            color: #313131;
+            max-width: 270px;
+            float: left;
+          }
+        }
+      }
+    }
+    .form-input{
+      float: right;
+      width: 402px;
+      height: 255px;
+      margin-left: 94px;
+      label{
+        span{
+          font-size: 16px;
+          color: #313131;
+          display: block;
+          margin-bottom: 8px;
+        }
+        input,textarea{
+          border: none;
+          background: #f5f4f4;
+          border-radius: 4px;
+          padding-left: 6px;
+        }
+      }
+      button{
+        width: 81px;
+        height: 29px;
+        background: #1ab1ed;
+        border-radius: 4px;
+        text-align: center;
+        font-size: 16px;
+        color: #fff;
+        float: left;
+        border: none;
+        margin-top: 14px;
+      }
+      .name{
+        float: left;
+        width: 180px;
+        input{
+          width: 180px;
+          height: 33px;
+        }
+      }
+      .phone{
+        float: right;
+        width: 180px;
+        margin-left: 42px;
+        // span{
+        //   margin-top: 16px;
+        // }
+        input{
+          width: 180px;
+          height: 33px;
+        }
+      }
+      .message{
+        float: left;
+        textarea{
+          width: 402px;
+          height: 105px;
+          padding-top: 6px;
+        }
+      }
+    }
+  }
+  .address{
+    width: 869px;
+    height: 434px;
+    margin: 62px auto 122px; 
+  }
+}
