@@ -2,7 +2,7 @@
     <div class="swiper-container" id="certify">
         <div class="swiper-wrapper" @click="goprojectcase">
             <div v-for="(item,index) in arr" :key="index" class="swiper-slide">
-                <img v-bind:src="item.img" alt="" class="c-img" >
+                <img v-bind:src="item.pic" alt="" class="c-img" >
             </div>
         </div>
     </div>
@@ -10,18 +10,19 @@
 
 
 <script>
-
+import axios from '@/assets/ajax/ajax'
 export default {
     data(){
         return {
             arr:[
-                {img:require('@/img/index/WechatIMG31.png')},
-                {img:require('@/img/index/WechatIMG32.jpeg')},
-                {img:require('@/img/index/WechatIMG33.jpeg')},
+                {pic:require('@/img/index/home-swiper1.jpg')},
+                {pic:require('@/img/index/home-swiper2.jpg')},
+                {pic:require('@/img/index/home-swiper3.jpg')},
             ]
         }
     },
     mounted(){
+        this.getBottomBanner();
         this.$nextTick(()=>{
             const certifySwiper = new Swiper('#certify', {
                 watchSlidesProgress: true,
@@ -32,6 +33,8 @@ export default {
                 autoplay: true,
                 // autoplayDisableOnInteraction : false,
                 mousewheels: true,
+                observer:true,//修改swiper自己或子元素时，自动初始化swiper 
+                observeParents:true,//修改swiper的父元素时，自动初始化swiper
                 on: {
                     progress: function(progress) {
                         for (let i = 0; i < this.slides.length; i++) {
@@ -41,7 +44,10 @@ export default {
                             if (Math.abs(slideProgress) > 1) {
                                 modify = (Math.abs(slideProgress) - 1) * 0.3 + 1;
                             }
-                            var translate = slideProgress * modify * 260 + 'px';
+                            var translate = slideProgress * modify * 270 + 'px';
+                            // console.log(slideProgress);
+                            // console.log(modify);
+                            // console.log(translate);
                             var scale = 1 - Math.abs(slideProgress) / 5;
                             var zIndex = 999 - Math.abs(Math.round(10 * slideProgress));
                             slide.transform('translateX(' + translate + ') scale(' + scale + ')');
@@ -57,11 +63,9 @@ export default {
                             var slide = this.slides.eq(i)
                             slide.transition(transition);
                         }
-
                     }
                 }
             })
-
             certifySwiper.el.onmouseover = function(){ //鼠标放上暂停轮播
                 certifySwiper.autoplay.stop();
             }
@@ -69,11 +73,14 @@ export default {
                 certifySwiper.autoplay.start();
             }
         })
-
-        
-
     },
     methods:{
+        getBottomBanner(){
+            // var that = this;
+            // axios.get('weixin/footBannerList').then(res=>{
+            //     that.arr = res.data.footBannerList;
+            // })
+        },
         //项目案列的跳转
         goprojectcase(){
             this.$router.push({path:'projectcase'})
@@ -106,8 +113,9 @@ export default {
 
 #certify  .swiper-slide {
     
-	width: 620px;
-	height: 408px;
+	/* width: 620px; */
+    width: 680px;
+	height: 347px;
     background: #fff;
     cursor: pointer;
 	/* box-shadow: 0 8px 30px #ddd; */

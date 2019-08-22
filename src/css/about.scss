@@ -105,6 +105,7 @@
           text-align: left;
         }
         &:hover{
+          @extend .fade-in-up;
           background: #fff;
           h6{
             color: #313131;

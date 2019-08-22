@@ -30,7 +30,7 @@
 				<ol class="show-links">
 					<b class="show-arrow"></b>
 					<li class="link-item">
-							<span @click="gozhzm">智慧照明综合管理平台</span>
+							<span @click="gozhzm">路灯照明全域大数据管理平台</span>
 					</li>
 					<li class="link-item">
 							<span @click="gozhdg">智慧灯杆</span>
@@ -124,12 +124,13 @@
 	}
 </script>
 
+
 <style scoped lang="scss">
 .router-link-exact-active{
-	border-bottom: 2px solid #139ad0;
+	border-bottom: 2px solid #26baee;
 	display: block;
 	span{
-		color:#1AB1ED !important;
+		color:#26baee !important;
 	}
 }
     

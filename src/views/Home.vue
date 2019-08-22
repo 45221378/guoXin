@@ -3,7 +3,7 @@
     <div class="h-banner swiper-container" id="swiper-containerOne">
         <div class="swiper-wrapper">
             <div v-for='(el,i) in arrItem' v-bind:key="i" class="swiper-slide">
-                <img v-bind:src="el.img" />
+                <img v-bind:src="el.pic" />
             </div>
         </div>
         <div class="swiper-pagination" id="one-page"></div>
@@ -87,6 +87,7 @@
   import Trait from '@/components/Trait.vue'
   import SwiperDemo from '@/components/swiperDemo.vue'
   import Gototop from '@/components/Gototop.vue'
+  import axios from '@/assets/ajax/ajax'
 export default {
     name: 'home',
     data(){
@@ -94,11 +95,8 @@ export default {
             noticeList: [],
             animate:false,
             intNum: undefined,
-            arrItem:[
-                {img:require('@/img/index/WechatIMG28.jpeg')},
-                {img:require('@/img/index/WechatIMG29.jpeg')},
-                {img:require('@/img/index/WechatIMG30.jpeg')},
-                ]
+            arrItem:[],
+
         }
     },
     components: {
@@ -125,8 +123,8 @@ export default {
                 //     nextEl: '.swiper-button-next',
                 //     prevEl: '.swiper-button-prev',
                 // },
-                // observer:true,//修改swiper自己或子元素时，自动初始化swiper 
-                // observeParents:true//修改swiper的父元素时，自动初始化swiper
+                observer:true,//修改swiper自己或子元素时，自动初始化swiper 
+                observeParents:true//修改swiper的父元素时，自动初始化swiper
             })
             // //鼠标滑过pagination控制swiper切换
             // for(i=0;i<mySwiper.pagination.bullets.length;i++){
@@ -135,7 +133,18 @@ export default {
             //     };
             // } 
         },
-
+        gethomeBanner(){
+            var that = this;
+            axios.get('weixin/bannerList').then(res=>{
+                that.arrItem = res.data.bannerList;
+                // this.arrItem = [
+                //     {img:require('@/img/index/WechatIMG28.jpeg')},
+                //     {img:require('@/img/index/WechatIMG29.jpeg')},
+                //     {img:require('@/img/index/WechatIMG30.jpeg')},
+                //     ]
+                
+            })
+        },
         getNoticeData() {
             // getHomenews().then(res=>{
             //     console.log(res.data);
@@ -204,6 +213,7 @@ export default {
 
     },
     mounted(){
+        this.gethomeBanner()
         this._initSwiper()
         this.getNoticeData()
         document.documentElement.scrollTop = 0;

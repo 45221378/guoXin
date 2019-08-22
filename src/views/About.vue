@@ -9,6 +9,7 @@
         </p>
     </section>
     <Aboutus/>
+
     <section class="wedo">
         <div class="wedo-title">
           <i></i>
@@ -17,18 +18,18 @@
         </div>
         <ul class="wedo-list">
           <li>
-            <img src="@/img/aboutus/lamp.png" alt="智慧路灯&城市道路照明管理">  
-            <h6>智慧路灯&城市道路照明管理</h6>
+            <img src="@/img/aboutus/lamp.png" alt="构建全球智慧生态">  
+            <h6>构建全球智慧生态</h6>
             <p>我们结合物联网与云计算技术，自主研发出融合产品一体化可面向多种任务的城市公共照明管理方案——城市道路照明综合管理的整体解决方案。</p>
           </li>
           <li>
-            <img src="@/img/aboutus/pc-set.png" alt="网站建站&软件开发">  
-            <h6>网站建站&软件开发</h6>
+            <img src="@/img/aboutus/pc-set.png" alt="贡献智慧解决方案">  
+            <h6>贡献智慧解决方案</h6>
             <p>我们会结合您所属行业的类型及产品的特点设计出更加商业化、国际化的专业网站、彰显公司能力以及品牌价值。我们拥有资深的行业顾问，专业的产品研发，严格的系统测试，完善的售后服务。</p>
           </li>
           <li>
-            <img src="@/img/aboutus/hourse.png" alt="智慧城市建设">  
-            <h6>智慧城市建设</h6>
+            <img src="@/img/aboutus/hourse.png" alt="软件服务提供商">  
+            <h6>软件服务提供商</h6>
             <p>通过城市道路照明综合管理系统实现统一的管控，为未来的智慧城市发展提供更多的切入口,也是智慧城市数据采集的终端。</p>
           </li>
         </ul>

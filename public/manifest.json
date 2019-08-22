@@ -1,14 +1,14 @@
 {
-  "name": "my-vue-app",
-  "short_name": "my-vue-app",
+  "name": "国信天宇",
+  "short_name": "国信天宇",
   "icons": [
     {
-      "src": "./img/icons/android-chrome-192x192.png",
+      "src": "./img/icons/WechatIMG363.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "./img/icons/android-chrome-512x512.png",
+      "src": "./img/icons/WechatIMG363.png",
       "sizes": "512x512",
       "type": "image/png"
     }

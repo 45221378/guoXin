@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = "http://localhost:3000";
+axios.defaults.baseURL = "http://xcx.goobye.cn/website";
 
 axios.interceptors.request.use(function (config) {
   return config
@@ -11,8 +11,11 @@ axios.interceptors.request.use(function (config) {
 axios.interceptors.response.use(function(response){
   return response
 },function (err) {
+  console.log(err);
   return Promise.reject(err)
 })
+
+export default axios;
 
 
 // export const jounus = ()=>{
@@ -30,4 +33,4 @@ axios.interceptors.response.use(function(response){
 
 // export async function getNewsList(){
 //   return await axios.get(`/gx/list`);
-}
+// }

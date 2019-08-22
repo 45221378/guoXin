@@ -38,7 +38,7 @@ export default {
         // console.log(this.$refs.element.offsetHeight);
         window.addEventListener('scroll',this.aboutusScroll,false);
         let topHeight = this.$refs.element.offsetTop ; 
-        console.log(topHeight);
+        // console.log(topHeight);
         if(topHeight<600){
             this.fadeClass = 'about-animate';
         }

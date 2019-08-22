@@ -3,7 +3,7 @@
     <img class="banner-us" src="@/img/solvecase/banner-solve.png" alt="">    
     <section class="nav">
         <p>
-          <span class="active">智慧照明综合管理平台</span>
+          <span class="active">路灯照明全域大数据管理平台</span>
           <span @click="godenggan">智慧灯杆</span>
           <span @click="gocpxx">产品选型</span>
         </p>
@@ -12,7 +12,7 @@
       <div class="zhzm">
         <div class="content-title">
           <i></i>
-          <h5>智慧照明综合管理平台解决方案</h5>
+          <h5>路灯照明全域大数据管理平台解决方案</h5>
           <i></i>
         </div>
         <p class="zhzm-detail">随着国家工程建设招标政策的不断完善，PPP、EMC等城市道路照明“建维一体化”模式的大规模试点，多功能共杆、5G基站、交管设施的搭载融合，路灯经营模式即将发生变化，市场保护壁垒随之被打破，路灯建设市场面临不断被侵蚀的风险。</p>
@@ -70,7 +70,7 @@
         <div class="width1142">
           <div class="ywjg-left">
             <h6>业务构架</h6>  
-            <p>“城市道路照明综合管理系统”采用应用层、服务层以及设备层的三层架构形式,应用层包括监控、GIS、智慧照明控制、工程管理、生产管理等10个应用模块；服务层采用分布式“微服务”架构，根据业务场景需求，进行业务功能的“微服务”拆分，通过注册中心以及网关，进行“微服务”之间的功能调用和数据交互，以及满足未来其他子系统的扩展接口；设备层为多功能灯杆、监控等设备为平台提供数据及服务支持，并且运用“云服务”的消息功能以及AI人工智能技术，进行应用的扩展。</p>
+            <p>“城市道路照明综合管理系统”采用应用层、服务层以及设备层的三层架构形式,应用层包括监控、GIS、智慧照明控制、工程管理、生产管理等10个应用模块；服务层采用分布式“微服务”架构，根据业务场景需求，进行业务功能的“微服务”拆分，通过注册中心以及网关，进行“微服务”之间的功能调用和数据交互，以及满足未来其他子系统的扩展接口；设备层为多功能灯杆、监控等设备，为平台提供数据及服务支持，并且运用“云服务”的消息功能以及AI人工智能技术，进行应用的扩展。</p>
           </div>
           <div class="ywjg-right">
             <img src="@/img/solvecase/list1.png" alt="">
@@ -172,7 +172,7 @@
             <img class="img3" src="@/img/solvecase/icon3.png" alt="">
             <img class="img4" src="@/img/solvecase/icon4.png" alt="">
             <img class="img5" src="@/img/solvecase/icon5.png" alt=""> -->
-            <img class="img" src="@/img/solvecase/WechatIMG40.png" alt="">
+            <img class="img" src="@/img/solvecase/WechatIMG294.png" alt="">
         </div>
       </section>
       <section class="zhdg h5-title">
@@ -188,7 +188,7 @@
               <h4>智慧城市之智慧灯杆</h4>
             </div>
             <div class="zhdg-main clearfix">
-              <img class="fl-left img1" src="@/img/solvecase/list2.png" alt="">
+              <img class="fl-left img1" src="@/img/solvecase/list2.jpeg" alt="">
               <p class="fl-right p1">智慧灯杆作为智慧城市的重要“切入口”，也是智慧城市的重要组成部分。集合了音视频监控设备、无线基站、WIFI热点、多媒体屏幕、充电桩以及天气、环境等各种感知器，依托于强大的综合管理平台，有效实现智能照明、绿色能源、智能安防、无线城市、互通互联、智能感知、智慧交通、智慧市政等诸多应用。智慧灯杆的“固定性”、“持续性”、“易实施”以及应用多元化的“强变现”等特殊属性，有利于快速布局抢占智慧城市入口形成有效壁垒。</p>
             </div>
           </li>
@@ -206,7 +206,7 @@
               <h4>智慧照明</h4>
             </div>
             <div class="zhdg-main clearfix border-none">
-              <img class="fl-left img3" src="@/img/solvecase/list3.png" alt="">
+              <img class="fl-left img3" src="@/img/solvecase/list3.jpeg" alt="">
               <p class="fl-right p3">21世纪以来，能源危机和环境污染严重,“节能减排”已成为全球节能号召，备受瞩目。其中，照明节能是“节能减排”中非常重要的一环，传统照明带来大量二氧化碳等气体的排放，对于环境的影响也将越来越大，随着城市照明快速发展，上述问题还将更加突出。在照明用电中，路灯占有相当的份额，由于线路工作时间长，耗能非常之大，推广绿色照明势在必行。确保按时、按需点亮每一盏灯，并能有效地节省路灯的用电电量、延长灯泡的寿命、降低维护和管理的成本是现代效能型社会追求的目标。因此，探索和应用新型的绿色的照明供电方式，对温室气体减排目标，意义十分重大。</p>
             </div>
           </li>

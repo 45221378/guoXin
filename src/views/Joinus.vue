@@ -27,6 +27,7 @@
             </ul>
           </div>
           <div class="form-input clearfix">
+            <p v-html="errorTip" class="errorTip"></p>
             <label class="name">
               <span>姓名</span><input v-model="username" />
             </label>
@@ -65,7 +66,8 @@
 // // 初始化  vue-amap
 import AMap from 'vue-amap';
 import Vue from "vue"
-// import { jounus } from "@/assets/ajax/ajax.js";
+import axios from "@/assets/ajax/ajax.js";
+import { Message } from 'element-ui';
 
 Vue.use(AMap);
 AMap.initAMapApiLoader({
@@ -89,6 +91,7 @@ export default {
       username:'',
       userphone:'',
       usersay:'',
+      errorTip:'',
       map: null,
       // amapManager,
       center: [114.274503,30.598135],
@@ -116,7 +119,35 @@ export default {
   },
   methods:{
     gosubmit(){
-      console.log(this.username)
+      const phoneReg = /^(^(\d{3,4}-)?\d{7,8})$|(1[0-9]{10})$/;
+      var that = this;
+      if(that.username==''){
+        that.errorTip = '请输入姓名';
+        return;
+      }else if(that.userphone==''){
+        that.errorTip = '请输入手机号';
+        return;
+      }
+      else if(!(phoneReg.test(that.userphone))){
+        that.errorTip = '电话输入有误';
+        return;
+      }
+      else 
+      {
+        const data = {
+          name:that.username,
+          cellphone:that.userphone,
+          message:that.usersay
+        }
+        // console.log(that.username+that.userphone+that.usersay);
+        axios.get('weixin/insertCustomer',{params:data}).then(res=>{
+          // that.errorTip = '提交成功';
+          Message.success('提交成功')
+          that.username='';
+          that.userphone='';
+          that.usersay='';
+        })
+      }
     }
   }
 }
