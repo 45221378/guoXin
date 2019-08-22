@@ -23,67 +23,73 @@ export default {
     },
     mounted(){
         this.getBottomBanner();
-        this.$nextTick(()=>{
-            const certifySwiper = new Swiper('#certify', {
-                watchSlidesProgress: true,
-                slidesPerView: 'auto',
-                centeredSlides: true,
-                loop: true,
-                loopedSlides: 3,
-                autoplay: true,
-                // autoplayDisableOnInteraction : false,
-                mousewheels: true,
-                observer:true,//修改swiper自己或子元素时，自动初始化swiper 
-                observeParents:true,//修改swiper的父元素时，自动初始化swiper
-                on: {
-                    progress: function(progress) {
-                        for (let i = 0; i < this.slides.length; i++) {
-                            var slide = this.slides.eq(i);
-                            var slideProgress = this.slides[i].progress;
-                            var modify = 1;
-                            if (Math.abs(slideProgress) > 1) {
-                                modify = (Math.abs(slideProgress) - 1) * 0.3 + 1;
-                            }
-                            var translate = slideProgress * modify * 270 + 'px';
-                            // console.log(slideProgress);
-                            // console.log(modify);
-                            // console.log(translate);
-                            var scale = 1 - Math.abs(slideProgress) / 5;
-                            var zIndex = 999 - Math.abs(Math.round(10 * slideProgress));
-                            slide.transform('translateX(' + translate + ') scale(' + scale + ')');
-                            slide.css('zIndex', zIndex);
-                            slide.css('opacity', 1);
-                            if (Math.abs(slideProgress) > 3) {
-                                slide.css('opacity', 0);
-                            }
-                        }
-                    },
-                    setTransition: function(transition) {
-                        for (var i = 0; i < this.slides.length; i++) {
-                            var slide = this.slides.eq(i)
-                            slide.transition(transition);
-                        }
-                    }
-                }
-            })
-            certifySwiper.el.onmouseover = function(){ //鼠标放上暂停轮播
-                certifySwiper.autoplay.stop();
-            }
-            certifySwiper.el.onmouseleave = function(){
-                certifySwiper.autoplay.start();
-            }
-        })
+        
     },
     methods:{
         getBottomBanner(){
-            // var that = this;
-            // axios.get('weixin/footBannerList').then(res=>{
-            //     that.arr = res.data.footBannerList;
-            // })
+           
+            axios.get('weixin/footBannerList').then(res=>{
+                this.arr = res.data.footBannerList;
+                this.swiperInit();
+            }).catch(err=>{
+                this.swiperInit();
+            })
         },
         //项目案列的跳转
         goprojectcase(){
             this.$router.push({path:'projectcase'})
+        },
+        swiperInit(){
+            this.$nextTick(()=>{
+                const certifySwiper = new Swiper('#certify', {
+                    watchSlidesProgress: true,
+                    slidesPerView: 'auto',
+                    centeredSlides: true,
+                    loop: true,
+                    loopedSlides: 3,
+                    autoplay: true,
+                    // autoplayDisableOnInteraction : false,
+                    mousewheels: true,
+                    observer:true,//修改swiper自己或子元素时，自动初始化swiper 
+                    observeParents:true,//修改swiper的父元素时，自动初始化swiper
+                    on: {
+                        progress: function(progress) {
+                            for (let i = 0; i < this.slides.length; i++) {
+                                var slide = this.slides.eq(i);
+                                var slideProgress = this.slides[i].progress;
+                                var modify = 1;
+                                if (Math.abs(slideProgress) > 1) {
+                                    modify = (Math.abs(slideProgress) - 1) * 0.3 + 1;
+                                }
+                                var translate = slideProgress * modify * 270 + 'px';
+                                // console.log(slideProgress);
+                                // console.log(modify);
+                                // console.log(translate);
+                                var scale = 1 - Math.abs(slideProgress) / 5;
+                                var zIndex = 999 - Math.abs(Math.round(10 * slideProgress));
+                                slide.transform('translateX(' + translate + ') scale(' + scale + ')');
+                                slide.css('zIndex', zIndex);
+                                slide.css('opacity', 1);
+                                if (Math.abs(slideProgress) > 3) {
+                                    slide.css('opacity', 0);
+                                }
+                            }
+                        },
+                        setTransition: function(transition) {
+                            for (var i = 0; i < this.slides.length; i++) {
+                                var slide = this.slides.eq(i)
+                                slide.transition(transition);
+                            }
+                        }
+                    }
+                })
+                certifySwiper.el.onmouseover = function(){ //鼠标放上暂停轮播
+                    certifySwiper.autoplay.stop();
+                }
+                certifySwiper.el.onmouseleave = function(){
+                    certifySwiper.autoplay.start();
+                }
+            })
         }
     }
 }

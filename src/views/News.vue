@@ -233,7 +233,6 @@
 </template>
 <script>
 
-// import {getNewsList} from "@/assets/ajax/ajax";
 export default {
   data(){
     return {

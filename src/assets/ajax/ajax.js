@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = "http://xcx.goobye.cn/website";
+axios.defaults.baseURL = "http://xcx.goobye.cn/website/";
 
 axios.interceptors.request.use(function (config) {
   return config

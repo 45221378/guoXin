@@ -16,6 +16,10 @@ import "@/css/index.scss";
 
 import Swiper from  "@/assets/swiper/swiper.min.js";
 
+import axios from '@/assets/ajax/ajax'
+Vue.prototype.$axios = axios;
+
+
 new Vue({
   router,
   store,

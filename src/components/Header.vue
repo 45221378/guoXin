@@ -1,16 +1,16 @@
 <template>
   <div class="common-header clearfix">
 		<div class="show-logo">
-					<img src="@/img/guoxinlogo.png" alt="">
+			<img src="@/img/guoxinlogo.png" alt="">
 		</div>
 		<ul class="navbar-nav clearfix">
 			<li class="nav-item">
-				<a @click="gohome"  class="nav-item-a">
+				<a @click="gohome"  class="nav-item-a" :class="$route.name=='home'?activeClass:''" >
 					<span class="header-title">首页</span>
 				</a>
 			</li>
 			<li class="nav-item ">
-				<a  @click='goaboutus' class="nav-item-a">
+				<a  @click='goaboutus' class="nav-item-a" :class="$route.name=='about'?activeClass:''">
 					<span class="header-title">关于我们</span>
 				</a>
 				<ol class="show-links">
@@ -24,7 +24,7 @@
 				</ol>
 			</li>
 			<li class="nav-item ">
-				<a  @click="gosolvecase" class="nav-item-a">
+				<a  @click="gosolvecase" class="nav-item-a" :class="$route.name=='solvecase'?activeClass:''">
 					<span class="header-title"> 解决方案</span>
 				</a>
 				<ol class="show-links">
@@ -41,12 +41,12 @@
 				</ol>
 			</li>
 			<li class="nav-item ">
-				<a  @click="goprojectcase" class="nav-item-a">
+				<a  @click="goprojectcase" class="nav-item-a" :class="$route.name=='projectcase'?activeClass:''">
 					<span class="header-title">项目案列</span>
 				</a>
 			</li>
 			<li class="nav-item ">
-				<a @click="gogsxx" class="nav-item-a">
+				<a @click="gogsxx" class="nav-item-a"  :class="$route.name=='news'?activeClass:''" >
 					<span class="header-title">新闻动态</span>
 				</a>
 				<ol class="show-links">
@@ -60,7 +60,7 @@
 				</ol>
 			</li>
 			<li class="nav-item ">
-				<a  @click="gojoinus" class="nav-item-a">
+				<a  @click="gojoinus" class="nav-item-a" :class="$route.name=='joinus'?activeClass:''">
 					<span class="header-title">联系我们</span>
 				</a>
 			</li>
@@ -77,7 +77,8 @@
 		data(){
 			return{
 				headerBlue: 1,
-				newData:  Date.parse(new Date())
+				newData:  Date.parse(new Date()),
+				activeClass:"head-active"
 			}
 		},
 		mounted(){
@@ -133,6 +134,15 @@
 		color:#26baee !important;
 	}
 }
+
+.head-active{
+	border-bottom: 2px solid #26baee;
+	display: block;
+	span{
+		color:#26baee !important;
+	}
+}
+    
     
 </style>
 
