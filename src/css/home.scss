@@ -53,11 +53,13 @@
                 }
                 p{
                   max-width: 300px;
+                  margin-top: 15px;
                 }
+
               }
             }
             li:nth-child(2){
-              margin: 0 35px 0 50px;
+              margin: 0 60px 0 50px;
             }
           }
         }  
@@ -73,19 +75,42 @@
         .img-left{
           float: left;
           width: 508px;
-          img{
+          height: 295px;
+          &-img{
+            overflow: hidden;
+            img{
             width: 508px;
+            height: 295px;
             cursor: pointer;
+            transition: all 0.8s;
+            &:hover{
+              transform: scale(1.1,1.1);
+            }
           }
+          }
+          
           .img-p1{
             font-size: 16px;
             color: #535353;
             margin: 26px 0 13px 0;
+            width: 508px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            cursor: pointer;
+            &:hover{
+              color: #139AD0;
+            }
           }
           .img-p2{
             font-size: 16px;
             color: #a0a0a0;
+            width: 508px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
           }
+
         }
         .contain-right{
           float: left;
@@ -112,6 +137,7 @@
                   font-weight:400;
                   color:rgba(181,181,181,1);
                   text-align: center;
+                  
                 }
               }
               .news-rigth{
@@ -121,6 +147,14 @@
                   font-size: 16px;
                   color: #535353;
                   margin: 0 0 6px 0;
+                  width: 504px;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  cursor: pointer;
+                  &:hover{
+                    color: #139AD0;
+                  }
                 }
                 .news-p2{
                   font-size: 16px;

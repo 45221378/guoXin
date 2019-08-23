@@ -23,7 +23,8 @@
             </p>
           </div>
         </li> -->
-        <li>
+
+        <!-- <li>
           <div class="list-img">
             <img src="@/img/index/city.png" alt="">
           </div> 
@@ -36,8 +37,8 @@
               <a class="right">></a>
             </p>
           </div>
-        </li> 
-        <li>
+        </li>  -->
+        <!-- <li>
           <div class="list-img">
             <img src="@/img/index/city.png" alt="">
           </div> 
@@ -106,7 +107,7 @@
               <a class="right">></a>
             </p>
           </div>
-        </li>
+        </li> -->
       </ul>
       <div class="nav-pagation">
         <el-pagination
@@ -134,7 +135,7 @@
             </p>
           </div>
         </li> -->
-        <li>
+        <!-- <li>
           <div class="list-img">
             <img src="@/img/index/city.png" alt="">
           </div> 
@@ -217,7 +218,7 @@
               <a class="right">></a>
             </p>
           </div>
-        </li>
+        </li> -->
       </ul>
       <div class="nav-pagation">
         <el-pagination
@@ -268,9 +269,25 @@ export default {
     }else{
       this.blue = true;
     }
+    this.getgsxx(0);
+    this.getgsxx(1);
+
   },
+
+  create(){
+    // this.$axios.get('weixin/clicknewsList',{type:1}).then(res=>{
+    //   console.log(res);
+    // })
+  },
+
   //点击查看详情，进行跳转
   methods:{
+    //获取公司新闻内容
+    getgsxx(mId){
+      this.$axios.get(`weixin/clicknewsList?type=${mId}`).then(res=>{
+        console.log(res);
+      })
+    },
     gogsxx(){
       this.$router.push({name:'news',params:{time:new Date().getTime()},query:{mId:'gsxx'}})
     },
@@ -278,8 +295,9 @@ export default {
 			this.$router.push({name:'news',params:{time:new Date().getTime()},query:{mId:'hyxx'}})
 
     },
-    goNewsDetail(){
-      this.$router.push({path:'newsdetail'})
+    //去新闻详情页
+    gonewsDetail(newsId){
+        this.$router.push({name:'newsdetail',params:{newsId:newsId}})
     }
   }
 }

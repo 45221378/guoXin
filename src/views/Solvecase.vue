@@ -3,7 +3,7 @@
     <img class="banner-us" src="@/img/solvecase/banner-solve.png" alt="">    
     <section class="nav">
         <p>
-          <span class="active">路灯照明全域大数据管理平台</span>
+          <span class="active">大数据管理平台</span>
           <span @click="godenggan">智慧灯杆</span>
           <span @click="gocpxx">产品选型</span>
         </p>
@@ -12,7 +12,7 @@
       <div class="zhzm">
         <div class="content-title">
           <i></i>
-          <h5>路灯照明全域大数据管理平台解决方案</h5>
+          <h5>路灯照明全域大数据管理平台</h5>
           <i></i>
         </div>
         <p class="zhzm-detail">随着国家工程建设招标政策的不断完善，PPP、EMC等城市道路照明“建维一体化”模式的大规模试点，多功能共杆、5G基站、交管设施的搭载融合，路灯经营模式即将发生变化，市场保护壁垒随之被打破，路灯建设市场面临不断被侵蚀的风险。</p>
@@ -32,6 +32,7 @@
           <h5 class="colorwhite">创新思维</h5>
           <i></i>
         </div>
+
         <div class="show-img">
           <ul>
             <li>
@@ -138,7 +139,7 @@
           <h5 class="colorwhite">目标及效果</h5>
           <i></i>
         </div>
-        <ul class="mbxg-wenzi" id="mbxg-wenzi">
+        <ul class="mbxg-wenzi clearfix" id="mbxg-wenzi">
           <li class="mgt155 " :class="fadeClass">
             <h6>业务渠道多样化</h6>
             <span>智能硬件开放平台 </span>

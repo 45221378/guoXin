@@ -69,7 +69,7 @@ export default {
         },
 
         goqyjs(){
-            this.$router.push({path:'about',query:{mId:'qyjs'}})
+			this.$router.push({name:'about',params:{time:new Date().getTime()}})
         },
     }
 }

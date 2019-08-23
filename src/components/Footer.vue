@@ -8,7 +8,7 @@
             <a @click='goqyjs' class="co89">企业介绍</a>
             <a @click='goqywh' class="co89 mgt19" >企业文化</a>
             <a @click="gosolvecase">解决方案</a>
-            <a @click="gozhzm" class="co89">路灯照明全域大数据管理平台</a>
+            <a @click="gozhzm" class="co89">大数据管理平台</a>
             <a @click="gozhdg" class="co89">智慧灯杆</a>
             <a @click="gocpxx" class="co89 mgt19">产品选型</a>
             <a @click="goprojectcase">项目案例</a>

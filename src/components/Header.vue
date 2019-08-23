@@ -30,7 +30,7 @@
 				<ol class="show-links">
 					<b class="show-arrow"></b>
 					<li class="link-item">
-							<span @click="gozhzm">路灯照明全域大数据管理平台</span>
+							<span @click="gozhzm">大数据管理平台</span>
 					</li>
 					<li class="link-item">
 							<span @click="gozhdg">智慧灯杆</span>
