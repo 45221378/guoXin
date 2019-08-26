@@ -1,6 +1,8 @@
 <template>
   <div class="about">
-    <img class="banner-us" src="@/img/aboutus/banner-us.png" alt="">
+    <!-- <img class="banner-us" src="@/img/aboutus/banner-us.png" alt=""> -->
+    <img class="banner-us" :src="bannerPic.pic" alt="">
+    
     <!-- <router-view/> -->
     <section class="nav">
         <p>
@@ -125,6 +127,10 @@
     },
     watch:{
 
+    },
+    created(){
+      this.getBanner(1);
+      console.log(this.bannerPic)
     },
     mounted(){
       let mId = this.$route.query.mId;

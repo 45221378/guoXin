@@ -1,6 +1,8 @@
 <template>
   <div class="xmal about">
-    <img class="banner-us" src="@/img/projectCase/pro-banner.png" alt="">    
+    <img class="banner-us" :src="bannerPic.pic" alt="">    
+    
+    <!-- <img class="banner-us" src="@/img/projectCase/pro-banner.png" alt="">     -->
     <section class="case">
       <div class="h5-title">
         <div class="content-title">
@@ -39,13 +41,13 @@
 
 <style scoped lang="scss">
   @import '../css/about.scss';
-
   @import "../css/projectCase.scss";
 
 </style>
 <script>
 export default {
   mounted(){
+    this.getBanner(3);
     document.documentElement.scrollTop = 0;
   }
 }

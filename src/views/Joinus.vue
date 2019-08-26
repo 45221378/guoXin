@@ -1,6 +1,8 @@
 <template>
   <div class="joinus about">
-    <img class="banner-us" src="@/img/banner-concatus.png" alt="">  
+    <img class="banner-us" :src="bannerPic.pic" alt="">  
+    <!-- <img class="banner-us" src="@/img/banner-concatus.png" alt="">   -->
+    
       <div class="joinus-main">
         <div class="h5-title">
           <div class="content-title">
@@ -78,14 +80,6 @@ AMap.initAMapApiLoader({
 });
 export default {
   name: 'test',
-  mounted(){
-    // jounus()
-    document.documentElement.scrollTop = 0;
-    // jounus().then(res=>{
-    //   console.log(res);
-    // })
-
-  },
   data () {
     return {
       username:'',
@@ -116,6 +110,12 @@ export default {
           pName: 'Geolocation',
       }]
     }
+  },
+   mounted(){
+    // jounus()
+    document.documentElement.scrollTop = 0;
+    this.getBanner(5);
+
   },
   methods:{
     gosubmit(){

@@ -2,7 +2,9 @@
     <div class="swiper-container" id="certify">
         <div class="swiper-wrapper" @click="goprojectcase">
             <div v-for="(item,index) in arr" :key="index" class="swiper-slide">
-                <img v-bind:src="item.pic" class="c-img" >
+                <a :href="item.url">
+                    <img v-bind:src="item.pic" class="c-img" >
+                </a>
             </div>
         </div>
     </div>

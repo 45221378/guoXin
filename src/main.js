@@ -19,14 +19,35 @@ import Swiper from  "@/assets/swiper/swiper.min.js";
 import axios from '@/assets/ajax/ajax'
 Vue.prototype.$axios = axios;
 
+Vue.mixin({
+  data(){
+    return {
+      bannerPic:[]
+    }
+  },
+  methods:{
+    getBanner(type){
+        this.$axios.get(`/weixin/selectPic?type=${type}`).then(res=>{
+            console.log(res)
+            this.bannerPic = res.data.selectPic;
+        }).catch(err=>{
+           alert('图片请求错误。')
+        });
+    }
+  },
+  created(){
+    
+  }
+})
+
 
 new Vue({
   router,
   store,
+  // mixins: [mixin],
   render: h => h(App),
   watch:{
-    '$route':function(to,from){
-      // console.log(to.name);
+    '$route':function(to,from){ 
     }
   }
 }).$mount('#app')

@@ -3,7 +3,9 @@
     <div class="h-banner swiper-container" id="swiper-containerOne">
         <div class="swiper-wrapper">
             <div v-for='(el,i) in arrItem' v-bind:key="i" class="swiper-slide">
-                <img v-bind:src="el.pic" />
+                <a :href="el.url">
+                    <img v-bind:src="el.pic" />
+                </a>
             </div>
         </div>
         <div class="swiper-pagination" id="one-page"></div>
@@ -57,28 +59,31 @@
       </section>
       <h5 class="margin112" @click="gonews">新闻资讯</h5>
       <section class="news clearfix">
+        <div class="img-left">
+            <div class="img-left-img" v-for='(it,i) in noticeList.slice(0,1)' v-bind:key="i" @click="gonewsDetail(it.id,it.title,it.time)">
+                <img v-bind:src="it.pic">
+                <p class="img-p1">{{it.title}}</p>
+                <p class="img-p2" v-html="it.content"></p>
+            </div>
+        </div>
           <!-- <div class="img-left">
-              <img @click="gonewsDetail(noticeListOne.id)" v-bind:src="noticeListOne.pic" alt="">
-              <p class="img-p1" @click="gonewsDetail(noticeListOne.id)">{{noticeListOne.title||'智慧路灯已经形成万亿级新兴产业，智慧城市建设开启新篇章'}}</p>
-              <p class="img-p2">{{noticeListOne.selectContent.content||'截至2017年底，全国公路通车总里程达477.35万公里，是1978年的5.4倍，高速公路覆盖97%的20万以上人'}}</p>
-          </div> -->
-          <div class="img-left">
               <div class="img-left-img">
                 <img @click="gonewsDetail(noticeListOne.id)" src="@/img/index/city.png" alt="">
               </div>
               <p class="img-p1" @click="gonewsDetail(noticeListOne.id)">智慧路灯已经形成万亿级新兴产业，智慧城市建设开启新篇章</p>
               <p class="img-p2">截至2017年底，全国公路通车总里程达477.35万公里，是1978年的5.4倍，高速公路覆盖97%的20万以上人</p>
-          </div>
+          </div> -->
           <div class="contain-right swiper-container" id="swiper-containerTwo">
               <div ref="con1" class="ul swiper-wrapper" >
-                  <div class="clearfix swiper-slide slide-text li" v-for='(el,i) in noticeList' v-bind:key='i'>
+                  <div class="clearfix swiper-slide slide-text li" v-for='(el,i) in noticeList' v-bind:key='i' @click="gonewsDetail(el.id,el.title,el.time)">
                       <div class="news-left">
                           <span class="day">{{el.time.toString().substring(8)}}</span>
                           <span>{{el.time.toString().substring(0,7)}}</span>  
                       </div>
                       <div class="news-rigth">
                         <p class="news-p1">{{el.title}}</p>
-                        <p class="news-p2">{{el.selectContent.content}}</p>
+                        <!-- <p class="news-p2">{{el.selectContent.content}}</p> -->
+                        <p class="news-p2" v-html="el.content"></p>
                       </div>
                   </div>
               </div>
@@ -159,11 +164,8 @@ export default {
         getNoticeData() {
             this.$axios.get('weixin/newsList').then(res=>{           
                 this.noticeList = res.data.newsList;
-                this.noticeListOne =res.data.newsList!=''? res.data.newsList[0]:'';
-                console.log(JSON.stringify(this.noticeListOne))
                 this._initSwiperTwo()
             })
-
 
             
             /*this.noticeList = [
@@ -212,8 +214,8 @@ export default {
 			this.$router.push({name:'news',params:{time:new Date().getTime()},query:{mId:'gsxx'}})
         },
         //去新闻详情页
-        gonewsDetail(newsId){
-            this.$router.push({name:'newsdetail',params:{newsId:newsId}})
+        gonewsDetail(newsId,newsTitle,newsTime){
+            this.$router.push({name:'newsdetail',params:{newsId:newsId},query:{newsTitle:newsTitle,newsTime:newsTime}})
         }
     },
     mounted(){

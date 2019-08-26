@@ -2,17 +2,20 @@
   &-list{
     width: 1200px;
     margin: 0 auto;
-    ul{
+    .list-ul{
       padding: 112px 0 83px 0;
       li{
         width: 383px;
         height: 100%;
         float: left;
         margin: 0 13px 25px 0;
+        border: 1px solid #dcdcdc;
         .list-img{
-          width: 383px;
+          width: 100%;
           height: 304px;
           overflow: hidden;
+          box-sizing: border-box;
+
           img{
             width: 100%;
             height: 100%;
@@ -25,15 +28,21 @@
         }
         .list-detail{
           padding: 20px 19px; 
-          border-left: 1px solid #dcdcdc;
-          border-right: 1px solid #dcdcdc;
-          border-bottom: 1px solid #dcdcdc;
+          // border-left: 1px solid #dcdcdc;
+          // border-right: 1px solid #dcdcdc;
+          // border-bottom: 1px solid #dcdcdc;
           h6{
             font-size: 16px;
             color: #535353;
             margin:22px 0 9px 0;
             cursor: pointer;
             font-weight: 400;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display:-webkit-box;
+            -webkit-line-clamp:2;
+            -webkit-box-orient:vertical;
+            height: 42px;
             &:hover{
               color: #1AB1ED; 
             }
@@ -75,20 +84,48 @@
   }
 }
 
+
 .nav-pagation{
   margin-bottom: 84px;
+  .el-pagination {
+    white-space: nowrap;
+    padding: 2px 5px;
+    color: #DCDCDC;
+  }
 }
+
 .el-pagination .el-pager li .active {
   background-color: #1AB1ED !important;
-  color: #FFF;
+  color: #FFF !important;
 }
 .el-pager li.active {
   color: #1AB1ED !important;
   cursor: default;
 }
+.el-pagination.is-background .el-pager li:not(.disabled).active{
+  background-color: #1AB1ED !important;
+  color: #FFF !important;
+}
+.el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev, .el-pagination.is-background .el-pager li{
+  background-color: #fff !important;
+  color: #A0A0A0 !important;
+  border:1px solid #DCDCDC;
+  font-weight: 400;
+  margin: 0 9px;
+  
+
+}
+.el-pagination button, .el-pagination span:not([class*=suffix]){
+  padding: 0 6px;
+}
+.el-pagination.is-background button[disabled]{
+  background: #DCDCDC !important;
+  color: #A0A0A0 !important;
+}
 
 
 .newsDetail{
+  min-height: 800px;
   h6{
     font-size: 29px;
     color: #313131;
@@ -109,7 +146,11 @@
   .content{
     width: 1000px;
     margin: 0 auto 110px;
-    &-p{
+    img{
+      width: 346px;
+      height: 461px;
+    }
+    p{
       font-size: 16px;
       color: #313131;
       text-align: left;

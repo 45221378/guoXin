@@ -31,6 +31,3 @@ export default axios;
 //   return await axios.post(`/api/user`);
 // }
 
-// export async function getNewsList(){
-//   return await axios.get(`/gx/list`);
-// }

@@ -1,6 +1,8 @@
 <template>  
   <div class="about slovecase">
-    <img class="banner-us" src="@/img/solvecase/banner-solve.png" alt="">    
+    <img class="banner-us" :src="bannerPic.pic" alt="">  
+    <!-- <img class="banner-us" src="@/img/solvecase/banner-solve.png" alt="">     -->
+      
     <section class="nav">
         <p>
           <span class="active">大数据管理平台</span>
@@ -312,6 +314,7 @@ export default {
   //   next();
   // },
   mounted(){
+    this.getBanner(2)
     // window.addEventListener('scroll',this.scroll,false);
     let mId = this.$route.query.mId;
     // console.log(mId);
