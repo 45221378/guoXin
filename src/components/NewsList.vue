@@ -7,7 +7,7 @@
           </div> 
           <div class="list-detail">
             <h6>{{curr.title}}</h6>
-            <p class="p1">{{curr.content}}</p>
+            <p class="p1" v-html="curr.selectContent"></p>
             <p class="p2">{{curr.time}}</p>
             <p class="p3">
               查看详情
