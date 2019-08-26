@@ -16,7 +16,7 @@
         <img @click="gozhzm" src="@/img/index/iMac.png" alt=""> 
         <div class="solve-detail">
             <h6 class="solevecase" @click="gozhzm">解决方案</h6>
-            <p>智慧照明综合管理平台</p>
+            <p>路灯照明全域大数据管理平台</p>
             <i></i>
             <p>国信天宇希望通过提升综合管理和科技信息水平，建设以城市道路照明管理为核心，构建融合智能应用技术和现代信息技术，广域泛在、开放共享的综合管理系统，促进路灯运维、建设、经营、服务灵活介入、协调互动、多能互补，提高数字化管理水平，弥补系统和人员不足。</p>
         </div>
@@ -136,7 +136,7 @@ export default {
                         clickable: true,
                     },
                     autoplay : {
-                        delay:1500
+                        delay:2000
                     },
                 })
             })  
