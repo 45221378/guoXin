@@ -102,7 +102,7 @@
         p{
           font-size: 16px;
           color: #fff; 
-          text-align: left;
+          text-align: justify;
         }
         &:hover{
           @extend .fade-in-up;
@@ -235,6 +235,7 @@
           span{
             display: block;
             text-align: center;
+            margin-bottom: 4px;
           }
         }
       }    

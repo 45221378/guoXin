@@ -58,10 +58,10 @@
               <img src="@/img/solvecase/five.png" alt="">
               <div class="img-content">
                 <h6>五大核心能力</h6>
-                <p class="p3">高度灵活的链接能力、</p>
-                <p class="p3">扩展及弹性能力、</p>
-                <p class="p3">业务支撑能力、</p>
-                <p class="p3">设计极简能力、</p>
+                <p class="p3">高度灵活的链接能力</p>
+                <p class="p3">扩展及弹性能力</p>
+                <p class="p3">业务支撑能力</p>
+                <p class="p3">设计极简能力</p>
                 <p class="p3">保障能力</p>
               </div>
             </li>

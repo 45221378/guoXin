@@ -4,7 +4,12 @@
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
 }
-
+p{
+    text-align: justify;
+}
+span{
+    text-align: justify;
+}
 
 body {
     font-family:"MicrosoftYaHeiLight","黑体", "microsoft yahei", Verdana, Arial, sans-serif, "Times New Roman", "宋体", simsun;

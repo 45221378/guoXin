@@ -5,6 +5,16 @@
     font-size: 27px;
     font-weight: bold;
     color: #000;
+    
+  }
+  .home-main{
+    cursor: pointer;
+
+    h5{
+      &:hover{
+        color: #139ad0;
+      }
+    }
   }
   &-detail{
     text-align: center;

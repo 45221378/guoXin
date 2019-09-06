@@ -59,7 +59,7 @@ export default {
             let topHeight = this.$refs.element.offsetTop ; 
             // console.log(topHeight);
             // console.log(topHeight-scrollTop);
-
+ 
             //显示屏的高度
             // let $h = document.documentElement.clientHeight;
 

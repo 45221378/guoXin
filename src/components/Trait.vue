@@ -1,10 +1,13 @@
 <template>
   <section class="trait about">
         <div class="h5-title">
-            <div class="content-title">
-                <i v-if="this.path"></i>
+            <div class="content-title"  v-if="this.path">
+                <i></i>
                 <h5>我们的特点</h5>
-                <i v-if="this.path"></i>
+                <i></i>
+            </div>
+            <div class="content-title home-main"  v-if="!this.path" @click="gosolvecase">
+                <h5>我们的特点</h5>
             </div>
         </div>
         <p class="trait-detail">系统融合\业务闭环\数据跟踪\分析支撑</p>
@@ -88,9 +91,14 @@ export default {
     mounted(){
         let routerPath = this.$route.name;
         if(routerPath=='home'){
-            this.path =false
+            this.path =false;
         }else{
             this.path =true
+        }
+    },
+    methods:{
+        gosolvecase(){
+            this.$router.push({name:'solvecase',params:{time:new Date().getTime()}})
         }
     }
 }
